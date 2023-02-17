@@ -1,7 +1,9 @@
 import re
 from unidecode import unidecode
-import pyopenjtalk
-
+try:
+    import pyopenjtalk
+except ImportError:
+    print('警告：pyopenjtalk 加载失败，无法合成日语')
 
 # Regular expression matching Japanese without punctuation marks:
 _japanese_characters = re.compile(
